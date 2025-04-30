@@ -57,7 +57,7 @@
 
 // 函数声明
 void fm_demodulate_fx(short* I, short* Q, int length, short* freq_fx, int sample_rate);
-void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx, short* R_Y_fx, short* B_Y_fx);
+void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx);
 void map_to_pixels_fx(short* data_fx, int data_length, short* pixels_fx, int pixel_count);
 void yuv_to_rgb(short Y, short RY, short BY, short* R, short* G, short* B);
 void save_bmp(const char* filename, unsigned char* image_data, int width, int height);
@@ -337,7 +337,7 @@ void extract_scan_line_fx(FILE* file_i, FILE* file_q, int start_sample, int num_
     fm_demodulate_fx(I_buffer, Q_buffer, num_samples, freq_fx, SAMPLE_RATE);
 
     // 使用定点数版频率转YUV
-    freq_to_yuv_fx(freq_fx, num_samples - 1, color_fx, dummy1_fx, dummy2_fx);
+    freq_to_yuv_fx(freq_fx, num_samples - 1, color_fx);
 
     // 使用定点数版映射到像素
     map_to_pixels_fx(color_fx, num_samples - 1, pixels_fx, pixel_count);
@@ -429,10 +429,8 @@ void fm_demodulate_fx(short* I, short* Q, int length, short* freq_fx, int sample
 }
 
 // 定点数版的频率转YUV函数
-void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx, short* R_Y_fx, short* B_Y_fx) {
-    // 预计算映射系数: 255 * FX_SCALE / FX_FREQ_RANGE
-    int mapping_coef = (int)(255 * FX_SCALE) / FX_FREQ_RANGE;
-    int fx_128 = FX_DOUBLE(128.0);
+void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx) {
+
 
     for(int i = 0; i < length; i++) {
         // 根据SSTV标准, 将频率转换为亮度值
@@ -454,12 +452,26 @@ void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx, short* R_Y_fx, shor
 // 定点数版的数据映射到像素
 void map_to_pixels_fx(short* data_fx, int data_length, short* pixels_fx, int pixel_count) {
     // 使用整数计算每个像素对应的采样点数
-    double samples_per_pixel_fx = (double)data_length / pixel_count;
+    //double samples_per_pixel_fx = (double)data_length / pixel_count;
+	//由于samples_per_pixel_fx只可能取两个值，分别对应data_length为4224-1和2112-1，提前算出并赋值，以降低浮点运算资源占用
+	double samples_per_pixel_fx;
+    if(data_length == 4224 - 1){
+    	samples_per_pixel_fx = 13.196875;
+    }else if(data_length == 2112 - 1){
+    	samples_per_pixel_fx = 6.596875;
+    }
+//	short samples_per_pixel_fx;
+//	    if(data_length == 4224 - 1){
+//	    	samples_per_pixel_fx = 13;
+//	    }else if(data_length == 2112 - 1){
+//	    	samples_per_pixel_fx = 6;
+//	    }
 
     for(int pixel = 0; pixel < pixel_count; pixel++) {
         // 计算像素对应的采样点范围
-        int start_idx = (int)(pixel * samples_per_pixel_fx);
-        int end_idx = (int)((pixel + 1) * samples_per_pixel_fx) - 1;
+        int start_idx = pixel * samples_per_pixel_fx;
+        //int end_idx = ((pixel + 1) * (samples_per_pixel_fx - 1)) - 1;
+        int end_idx = start_idx + samples_per_pixel_fx - 1;
 
         // 边界检查
         if(end_idx >= data_length) end_idx = data_length - 1;
