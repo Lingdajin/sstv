@@ -1,0 +1,108 @@
+366-environment-directory
+367-environment-directory
+368-environment-directory
+369-interpreter-exec console echo
+370-environment-directory
+371-environment-cd D:/CodeField/GPT-AIoT-WorkSpace/sstv
+372-environment-directory
+373-thread-list-ids
+374-data-list-register-names
+375-break-insert sstv.c:182
+376-break-insert sstv.c:182
+377-break-insert sstv.c:206
+378-break-insert sstv.c:182
+379-break-insert sstv.c:182
+380-break-insert sstv.c:182
+381-break-insert sstv.c:182
+382-break-insert sstv.c:182
+383-break-insert sstv.c:182
+384-break-insert sstv.c:136
+385-break-insert detect_1900hz.c:216
+386-break-insert detect_1900hz.c:191
+387-break-insert detect_1900hz.c:97
+388-break-insert -t main
+389-exec-run
+390-thread-list-ids
+391-stack-info-depth
+392-stack-list-frames 0 1
+393-data-list-changed-registers
+394-environment-directory
+395-stack-list-arguments 0 0 0
+396-stack-list-locals 0
+397 whatis iq_data_i_path
+398 whatis iq_data_q_path
+399 whatis file_i
+400 ptype FILE *
+401 ptype file_i
+402 whatis file_q
+403 whatis search_start
+404 whatis search_length
+405 whatis result
+406 ptype detection_result
+407 ptype result
+408-var-create - * iq_data_i_path
+409-var-evaluate-expression var1
+410-var-create - * iq_data_q_path
+411-var-evaluate-expression var2
+412-var-create - * file_i
+413-var-evaluate-expression var3
+414-break-delete 1
+415-var-create - * file_q
+416-var-evaluate-expression var4
+417-var-create - * search_start
+418-var-evaluate-expression var5
+419-var-create - * search_length
+420-var-evaluate-expression var6
+421-var-create - * result
+422-var-evaluate-expression var7
+423-exec-continue
+424-thread-list-ids
+425-stack-info-depth
+426-stack-list-frames 0 3
+427-data-list-changed-registers
+428-environment-directory
+429-stack-list-arguments 0 0 0
+430-stack-list-locals 0
+431 whatis fft_out
+432 whatis target_bin
+433 whatis bin_width
+434 whatis total_energy
+435 whatis count
+436 whatis start_bin
+437 whatis end_bin
+438-var-create - * fft_out
+439-var-evaluate-expression var8
+440-var-create - * target_bin
+441-var-evaluate-expression var9
+442-var-create - * bin_width
+443-var-evaluate-expression var10
+444-var-create - * total_energy
+445-var-evaluate-expression var11
+446-var-create - * count
+447-var-evaluate-expression var12
+448-var-create - * start_bin
+449-var-evaluate-expression var13
+450-var-create - * end_bin
+451-var-evaluate-expression var14
+452-var-list-children var8
+453-var-info-expression var8
+454-var-evaluate-expression var8.*
+455-var-show-attributes var9
+456-data-evaluate-expression target_bin
+457-var-show-attributes var10
+458-data-evaluate-expression bin_width
+459-var-show-attributes var11
+460-data-evaluate-expression total_energy
+461-var-show-attributes var12
+462-data-evaluate-expression count
+463-data-evaluate-expression total_energy
+464-data-evaluate-expression count
+465-data-evaluate-expression total_energy
+466-data-evaluate-expression count
+467-data-evaluate-expression total_energy
+468-data-evaluate-expression count
+469-data-evaluate-expression total_energy
+470-data-evaluate-expression count
+471 kill
+472-data-evaluate-expression $_exitcode
+473-gdb-exit

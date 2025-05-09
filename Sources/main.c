@@ -75,156 +75,156 @@ short fx_y_lines[IMAGE_HEIGHT][IMAGE_WIDTH];      // 存储所有行的Y值(定点数)
 short fx_ry_lines[IMAGE_HEIGHT/2][IMAGE_WIDTH];   // 存储RY值(定点数)
 short fx_by_lines[IMAGE_HEIGHT/2][IMAGE_WIDTH];   // 存储BY值(定点数)
 
-int main() {
-    const char* output_file_path = "./output/sstv_decoded.txt";
-    const char* bmp_file_path = "./output/sstv_image.bmp";
-    const char* iq_data_i_path = "./sstv_data_file/sstv_iq_i_big_endian.bin"; // I数据文件路径
-    const char* iq_data_q_path = "./sstv_data_file/sstv_iq_q_big_endian.bin"; // Q数据文件路径
+// int main() {
+//     const char* output_file_path = "./output/sstv_decoded.txt";
+//     const char* bmp_file_path = "./output/sstv_image.bmp";
+//     const char* iq_data_i_path = "./sstv_data_file/sstv_iq_i_big_endian.bin"; // I数据文件路径
+//     const char* iq_data_q_path = "./sstv_data_file/sstv_iq_q_big_endian.bin"; // Q数据文件路径
 
-    // 打开IQ数据文件，保持文件指针打开
-    FILE* file_i = fopen(iq_data_i_path, "rb");
-    FILE* file_q = fopen(iq_data_q_path, "rb");
+//     // 打开IQ数据文件，保持文件指针打开
+//     FILE* file_i = fopen(iq_data_i_path, "rb");
+//     FILE* file_q = fopen(iq_data_q_path, "rb");
 
-    if (file_i == NULL || file_q == NULL) {
-        printf("无法打开IQ数据文件\n");
-        if (file_i) fclose(file_i);
-        if (file_q) fclose(file_q);
-        return 1;
-    }
+//     if (file_i == NULL || file_q == NULL) {
+//         printf("无法打开IQ数据文件\n");
+//         if (file_i) fclose(file_i);
+//         if (file_q) fclose(file_q);
+//         return 1;
+//     }
 
-    FILE *output_file = fopen(output_file_path, "w");
-    if (output_file == NULL) {
-        printf("无法打开输出文件,请自行创建/output文件夹以存放输出文件\n");
-        fclose(file_i);
-        fclose(file_q);
-        return 1;
-    }
+//     FILE *output_file = fopen(output_file_path, "w");
+//     if (output_file == NULL) {
+//         printf("无法打开输出文件,请自行创建/output文件夹以存放输出文件\n");
+//         fclose(file_i);
+//         fclose(file_q);
+//         return 1;
+//     }
 
-    printf("开始SSTV解码...\n");
+//     printf("开始SSTV解码...\n");
 
-    // 处理每一行Y值 - 使用定点数版本
-    for(int line = 0; line < IMAGE_HEIGHT; line++) {
-        process_line_y_fx(file_i, file_q, line, fx_y_lines[line]);
-        printf("处理Y行: %d/240\r", line+1);
-    }
+//     // 处理每一行Y值 - 使用定点数版本
+//     for(int line = 0; line < IMAGE_HEIGHT; line++) {
+//         process_line_y_fx(file_i, file_q, line, fx_y_lines[line]);
+//         printf("处理Y行: %d/240\r", line+1);
+//     }
 
-    // 处理每两行的RY/BY值 - 使用定点数版本
-    for(int group = 0; group < IMAGE_HEIGHT/2; group++) {
-        process_line_ry_by_fx(file_i, file_q, group, fx_ry_lines[group], fx_by_lines[group]);
-        printf("处理RY/BY组: %d/120\r", group+1);
-    }
+//     // 处理每两行的RY/BY值 - 使用定点数版本
+//     for(int group = 0; group < IMAGE_HEIGHT/2; group++) {
+//         process_line_ry_by_fx(file_i, file_q, group, fx_ry_lines[group], fx_by_lines[group]);
+//         printf("处理RY/BY组: %d/120\r", group+1);
+//     }
 
-    // 输出解码结果到文件 - 添加RGB信息并优化格式
-    // fprintf(output_file, "# SSTV解码数据分析报告\n");
-    // fprintf(output_file, "# 图像尺寸: %d x %d 像素\n", IMAGE_WIDTH, IMAGE_HEIGHT);
-    // fprintf(output_file, "# 解码时间: %s\n\n", __DATE__);
+//     // 输出解码结果到文件 - 添加RGB信息并优化格式
+//     // fprintf(output_file, "# SSTV解码数据分析报告\n");
+//     // fprintf(output_file, "# 图像尺寸: %d x %d 像素\n", IMAGE_WIDTH, IMAGE_HEIGHT);
+//     // fprintf(output_file, "# 解码时间: %s\n\n", __DATE__);
 
-    // fprintf(output_file, "# 数据格式说明:\n");
-    // fprintf(output_file, "# Y:    亮度信号 (0-255)\n");
-    // fprintf(output_file, "# R-Y:  红色色度差信号\n");
-    // fprintf(output_file, "# B-Y:  蓝色色度差信号\n");
-    // fprintf(output_file, "# R,G,B: 转换后的RGB颜色值 (0-255)\n\n");
+//     // fprintf(output_file, "# 数据格式说明:\n");
+//     // fprintf(output_file, "# Y:    亮度信号 (0-255)\n");
+//     // fprintf(output_file, "# R-Y:  红色色度差信号\n");
+//     // fprintf(output_file, "# B-Y:  蓝色色度差信号\n");
+//     // fprintf(output_file, "# R,G,B: 转换后的RGB颜色值 (0-255)\n\n");
 
-    // fprintf(output_file, "行号,像素,Y值,R-Y值,B-Y值,R值,G值,B值\n");
-    // fprintf(output_file, "--------------------------------------\n");
+//     // fprintf(output_file, "行号,像素,Y值,R-Y值,B-Y值,R值,G值,B值\n");
+//     // fprintf(output_file, "--------------------------------------\n");
 
-//    // 统计信息变量
-//    double total_brightness = 0.0;
-//    int dark_pixels = 0;
-//    int bright_pixels = 0;
+// //    // 统计信息变量
+// //    double total_brightness = 0.0;
+// //    int dark_pixels = 0;
+// //    int bright_pixels = 0;
 
-//    for(int line = 0; line < IMAGE_HEIGHT; line++) {
-//        int group = line / 2;
-//
-//        for(int pixel = 0; pixel < IMAGE_WIDTH; pixel++) {
-//            unsigned char R, G, B;
-//
-//            // 使用定点数版YUV到RGB转换
-//            yuv_to_rgb_fx(
-//                fx_y_lines[line][pixel],
-//                fx_ry_lines[group][pixel],
-//                fx_by_lines[group][pixel],
-//                &R, &G, &B
-//            );
-//
-//            // 更新统计信息 - 需要转换回浮点数
-//            total_brightness += TO_DOUBLE(fx_y_lines[line][pixel]);
-//            if(TO_DOUBLE(fx_y_lines[line][pixel]) < 50) dark_pixels++;
-//            if(TO_DOUBLE(fx_y_lines[line][pixel]) > 200) bright_pixels++;
-//
-//            // // 只输出每20个像素的数据，防止文件过大
-//            // if(pixel % 20 == 0) {
-//            //     fprintf(output_file, "%3d,%3d,%6.2f,%6.2f,%6.2f,%3d,%3d,%3d\n",
-//            //             line, pixel,
-//            //             y_lines[line][pixel],
-//            //             ry_lines[group][pixel],
-//            //             by_lines[group][pixel],
-//            //             R, G, B);
-//            // }
-//            // printf("%3d,%3d,%d,%d,%d,%3d,%3d,%3d\n",
-//            //                 line, pixel,
-//            //                 fx_y_lines[line][pixel],
-//            //                 fx_ry_lines[group][pixel],
-//            //                 fx_by_lines[group][pixel],
-//            //                 R, G, B);
+// //    for(int line = 0; line < IMAGE_HEIGHT; line++) {
+// //        int group = line / 2;
+// //
+// //        for(int pixel = 0; pixel < IMAGE_WIDTH; pixel++) {
+// //            unsigned char R, G, B;
+// //
+// //            // 使用定点数版YUV到RGB转换
+// //            yuv_to_rgb_fx(
+// //                fx_y_lines[line][pixel],
+// //                fx_ry_lines[group][pixel],
+// //                fx_by_lines[group][pixel],
+// //                &R, &G, &B
+// //            );
+// //
+// //            // 更新统计信息 - 需要转换回浮点数
+// //            total_brightness += TO_DOUBLE(fx_y_lines[line][pixel]);
+// //            if(TO_DOUBLE(fx_y_lines[line][pixel]) < 50) dark_pixels++;
+// //            if(TO_DOUBLE(fx_y_lines[line][pixel]) > 200) bright_pixels++;
+// //
+// //            // // 只输出每20个像素的数据，防止文件过大
+// //            // if(pixel % 20 == 0) {
+// //            //     fprintf(output_file, "%3d,%3d,%6.2f,%6.2f,%6.2f,%3d,%3d,%3d\n",
+// //            //             line, pixel,
+// //            //             y_lines[line][pixel],
+// //            //             ry_lines[group][pixel],
+// //            //             by_lines[group][pixel],
+// //            //             R, G, B);
+// //            // }
+// //            // printf("%3d,%3d,%d,%d,%d,%3d,%3d,%3d\n",
+// //            //                 line, pixel,
+// //            //                 fx_y_lines[line][pixel],
+// //            //                 fx_ry_lines[group][pixel],
+// //            //                 fx_by_lines[group][pixel],
+// //            //                 R, G, B);
+// //         }
+// //    }
+
+//     // 添加统计摘要
+//     // fprintf(output_file, "\n\n# 图像统计摘要\n");
+//     // fprintf(output_file, "平均亮度: %.2f\n", total_brightness / (IMAGE_WIDTH * IMAGE_HEIGHT));
+//     // fprintf(output_file, "暗像素数量(Y<50): %d (%.2f%%)\n",
+//     //         dark_pixels, (dark_pixels * 100.0) / (IMAGE_WIDTH * IMAGE_HEIGHT));
+//     // fprintf(output_file, "亮像素数量(Y>200): %d (%.2f%%)\n",
+//     //         bright_pixels, (bright_pixels * 100.0) / (IMAGE_WIDTH * IMAGE_HEIGHT));
+
+//     // 创建RGB图像
+//     unsigned char* image_data = (unsigned char*)malloc(IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_PER_PIXEL);
+//     if (image_data == NULL) {
+//         printf("内存分配失败\n");
+//         fclose(output_file);
+//         return 1;
+//     }
+
+//     // 将YUV转换为RGB
+//     printf("\n将YUV转换为RGB...\n");
+//     for(int line = 0; line < IMAGE_HEIGHT; line++) {
+//         int group = line / 2;
+
+//         for(int pixel = 0; pixel < IMAGE_WIDTH; pixel++) {
+//             short R, G, B;
+
+//             // YUV到RGB转换
+//             yuv_to_rgb(
+//                 fx_y_lines[line][pixel],
+//                 fx_ry_lines[group][pixel],
+//                 fx_by_lines[group][pixel],
+//                 &R, &G, &B
+//             );
+
+//             // 在BMP图像中，像素按BGR顺序存储
+//             int idx = (line * IMAGE_WIDTH + pixel) * BYTES_PER_PIXEL;
+//             image_data[idx] = B;     // B
+//             image_data[idx + 1] = G; // G
+//             image_data[idx + 2] = R; // R
 //         }
-//    }
+//     }
 
-    // 添加统计摘要
-    // fprintf(output_file, "\n\n# 图像统计摘要\n");
-    // fprintf(output_file, "平均亮度: %.2f\n", total_brightness / (IMAGE_WIDTH * IMAGE_HEIGHT));
-    // fprintf(output_file, "暗像素数量(Y<50): %d (%.2f%%)\n",
-    //         dark_pixels, (dark_pixels * 100.0) / (IMAGE_WIDTH * IMAGE_HEIGHT));
-    // fprintf(output_file, "亮像素数量(Y>200): %d (%.2f%%)\n",
-    //         bright_pixels, (bright_pixels * 100.0) / (IMAGE_WIDTH * IMAGE_HEIGHT));
+//     // 保存为BMP文件
+//     save_bmp(bmp_file_path, image_data, IMAGE_WIDTH, IMAGE_HEIGHT);
 
-    // 创建RGB图像
-    unsigned char* image_data = (unsigned char*)malloc(IMAGE_WIDTH * IMAGE_HEIGHT * BYTES_PER_PIXEL);
-    if (image_data == NULL) {
-        printf("内存分配失败\n");
-        fclose(output_file);
-        return 1;
-    }
+//     printf("解码完成!\n");
+//     printf("- 数据已保存到: %s\n", output_file_path);
+//     printf("- 图像已保存到: %s\n", bmp_file_path);
 
-    // 将YUV转换为RGB
-    printf("\n将YUV转换为RGB...\n");
-    for(int line = 0; line < IMAGE_HEIGHT; line++) {
-        int group = line / 2;
+//     // 释放资源
+//     free(image_data);
+//     fclose(file_i);
+//     fclose(file_q);
+//     fclose(output_file);
 
-        for(int pixel = 0; pixel < IMAGE_WIDTH; pixel++) {
-            short R, G, B;
-
-            // YUV到RGB转换
-            yuv_to_rgb(
-                fx_y_lines[line][pixel],
-                fx_ry_lines[group][pixel],
-                fx_by_lines[group][pixel],
-                &R, &G, &B
-            );
-
-            // 在BMP图像中，像素按BGR顺序存储
-            int idx = (line * IMAGE_WIDTH + pixel) * BYTES_PER_PIXEL;
-            image_data[idx] = B;     // B
-            image_data[idx + 1] = G; // G
-            image_data[idx + 2] = R; // R
-        }
-    }
-
-    // 保存为BMP文件
-    save_bmp(bmp_file_path, image_data, IMAGE_WIDTH, IMAGE_HEIGHT);
-
-    printf("解码完成!\n");
-    printf("- 数据已保存到: %s\n", output_file_path);
-    printf("- 图像已保存到: %s\n", bmp_file_path);
-
-    // 释放资源
-    free(image_data);
-    fclose(file_i);
-    fclose(file_q);
-    fclose(output_file);
-
-    return 0;
-}
+//     return 0;
+// }
 
 // 定点数版的YUV到RGB转换
 void yuv_to_rgb(short Y, short RY, short BY, short* R, short* G, short* B) {
