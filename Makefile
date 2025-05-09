@@ -18,7 +18,9 @@ SOURCE_DIR=Sources
 # Source files. The Files of the following types are 
 # supported: *.c, *.s, *.SS
 SOURCE_FILES= \
-	main.c
+	main.c \
+	fft.c \
+	detect_1900hz.c
 
 # DLL source files
 DLL_SOURCE_FILES=\
