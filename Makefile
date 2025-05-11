@@ -20,7 +20,7 @@ SOURCE_DIR=Sources
 SOURCE_FILES= \
 	main.c \
 	fft.c \
-	detect_1900hz.c
+	detect_vis_sync.c
 
 # DLL source files
 DLL_SOURCE_FILES=\

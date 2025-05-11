@@ -1,3 +1,3 @@
 Build/main.o Build/main.d: Sources/main.c
 Build/fft.o Build/fft.d: Sources/fft.c
-Build/detect_1900hz.o Build/detect_1900hz.d: Sources/detect_1900hz.c
+Build/detect_vis_sync.o Build/detect_vis_sync.d: Sources/detect_vis_sync.c

@@ -1,108 +1,180 @@
-366-environment-directory
-367-environment-directory
-368-environment-directory
-369-interpreter-exec console echo
-370-environment-directory
-371-environment-cd D:/CodeField/GPT-AIoT-WorkSpace/sstv
-372-environment-directory
-373-thread-list-ids
-374-data-list-register-names
-375-break-insert sstv.c:182
-376-break-insert sstv.c:182
-377-break-insert sstv.c:206
-378-break-insert sstv.c:182
-379-break-insert sstv.c:182
-380-break-insert sstv.c:182
-381-break-insert sstv.c:182
-382-break-insert sstv.c:182
-383-break-insert sstv.c:182
-384-break-insert sstv.c:136
-385-break-insert detect_1900hz.c:216
-386-break-insert detect_1900hz.c:191
-387-break-insert detect_1900hz.c:97
-388-break-insert -t main
-389-exec-run
-390-thread-list-ids
-391-stack-info-depth
-392-stack-list-frames 0 1
-393-data-list-changed-registers
-394-environment-directory
-395-stack-list-arguments 0 0 0
-396-stack-list-locals 0
-397 whatis iq_data_i_path
-398 whatis iq_data_q_path
-399 whatis file_i
-400 ptype FILE *
-401 ptype file_i
-402 whatis file_q
-403 whatis search_start
-404 whatis search_length
-405 whatis result
-406 ptype detection_result
-407 ptype result
-408-var-create - * iq_data_i_path
-409-var-evaluate-expression var1
-410-var-create - * iq_data_q_path
-411-var-evaluate-expression var2
-412-var-create - * file_i
-413-var-evaluate-expression var3
-414-break-delete 1
-415-var-create - * file_q
-416-var-evaluate-expression var4
-417-var-create - * search_start
-418-var-evaluate-expression var5
-419-var-create - * search_length
-420-var-evaluate-expression var6
-421-var-create - * result
-422-var-evaluate-expression var7
-423-exec-continue
-424-thread-list-ids
-425-stack-info-depth
-426-stack-list-frames 0 3
-427-data-list-changed-registers
-428-environment-directory
-429-stack-list-arguments 0 0 0
-430-stack-list-locals 0
-431 whatis fft_out
-432 whatis target_bin
-433 whatis bin_width
-434 whatis total_energy
-435 whatis count
-436 whatis start_bin
-437 whatis end_bin
-438-var-create - * fft_out
-439-var-evaluate-expression var8
-440-var-create - * target_bin
-441-var-evaluate-expression var9
-442-var-create - * bin_width
-443-var-evaluate-expression var10
-444-var-create - * total_energy
-445-var-evaluate-expression var11
-446-var-create - * count
-447-var-evaluate-expression var12
-448-var-create - * start_bin
-449-var-evaluate-expression var13
-450-var-create - * end_bin
-451-var-evaluate-expression var14
-452-var-list-children var8
-453-var-info-expression var8
-454-var-evaluate-expression var8.*
-455-var-show-attributes var9
-456-data-evaluate-expression target_bin
-457-var-show-attributes var10
-458-data-evaluate-expression bin_width
-459-var-show-attributes var11
-460-data-evaluate-expression total_energy
-461-var-show-attributes var12
-462-data-evaluate-expression count
-463-data-evaluate-expression total_energy
-464-data-evaluate-expression count
-465-data-evaluate-expression total_energy
-466-data-evaluate-expression count
-467-data-evaluate-expression total_energy
-468-data-evaluate-expression count
-469-data-evaluate-expression total_energy
-470-data-evaluate-expression count
-471 kill
-472-data-evaluate-expression $_exitcode
-473-gdb-exit
+626-environment-directory
+627-environment-directory
+628-environment-directory
+629-interpreter-exec console echo
+630-environment-directory
+631-environment-cd D:/CodeField/GPT-AIoT-WorkSpace/sstv
+632-environment-directory
+633-thread-list-ids
+634-data-list-register-names
+635-break-insert sstv.c:182
+636-break-insert sstv.c:182
+637-break-insert sstv.c:206
+638-break-insert sstv.c:182
+639-break-insert sstv.c:182
+640-break-insert sstv.c:182
+641-break-insert sstv.c:182
+642-break-insert sstv.c:182
+643-break-insert sstv.c:182
+644-break-insert sstv.c:136
+645-break-insert detect_1900hz.c:97
+646-break-insert detect_1900hz.c:191
+647-break-insert detect_1900hz.c:216
+648-break-insert detect_VIS.c:95
+649-break-insert -t main
+650-exec-run
+651-thread-list-ids
+652-stack-info-depth
+653-stack-list-frames 0 1
+654-data-list-changed-registers
+655-environment-directory
+656-stack-list-arguments 0 0 0
+657-stack-list-locals 0
+658 whatis iq_data_i_path
+659 whatis iq_data_q_path
+660 whatis file_i
+661 ptype FILE *
+662 ptype file_i
+663 whatis file_q
+664 whatis search_start
+665 whatis search_length
+666 whatis result
+667 ptype DetectResult
+668 ptype result
+669-var-create - * iq_data_i_path
+670-var-evaluate-expression var1
+671-var-create - * iq_data_q_path
+672-var-evaluate-expression var2
+673-var-create - * file_i
+674-var-evaluate-expression var3
+675-var-create - * file_q
+676-var-evaluate-expression var4
+677-var-create - * search_start
+678-var-evaluate-expression var5
+679-var-create - * search_length
+680-var-evaluate-expression var6
+681-var-create - * result
+682-var-evaluate-expression var7
+683-break-insert detect_VIS.c:223
+684-exec-continue
+685-thread-list-ids
+686-stack-info-depth
+687-stack-list-frames 0 2
+688-data-list-changed-registers
+689-environment-directory
+690-stack-list-arguments 0 0 0
+691-stack-list-locals 0
+692 whatis file_i
+693 ptype FILE *
+694 ptype file_i
+695 whatis file_q
+696 whatis search_start
+697 whatis search_length
+698 whatis result
+699 ptype DetectResult
+700 ptype result
+701 whatis cos_1900
+702 whatis sin_1900
+703 whatis cos_1200
+704 whatis sin_1200
+705 whatis frame_read_size
+706 whatis i_buffer_raw
+707 whatis q_buffer_raw
+708 whatis I
+709 whatis Q
+710 whatis state
+711 ptype DetectState
+712 ptype state
+713 whatis frame_count
+714 whatis position
+715 whatis sequence_start
+716-var-create - * file_i
+717-var-evaluate-expression var8
+718-var-create - * file_q
+719-var-evaluate-expression var9
+720-var-create - * search_start
+721-var-evaluate-expression var10
+722-var-create - * search_length
+723-var-evaluate-expression var11
+724-var-create - * result
+725-var-evaluate-expression var12
+726-var-create - * cos_1900
+727-var-create - * sin_1900
+728-var-create - * &(cos_1900)
+729-var-set-format var15 hexadecimal
+730-break-delete 1
+731-var-evaluate-expression var15
+732-var-create - * &(sin_1900)
+733-var-set-format var16 hexadecimal
+734-var-evaluate-expression var16
+735-break-insert detect_VIS.c:95
+736-break-delete 4
+737-exec-continue
+738-thread-list-ids
+739-stack-info-depth
+740-stack-list-frames 0 1
+741-var-update var1
+742-var-update var2
+743-var-update var3
+744-var-update var4
+745-var-update var5
+746-var-update var6
+747-var-update var7
+748-var-update var8
+749-var-update var9
+750-var-update var10
+751-var-update var11
+752-var-update var12
+753-var-update var13
+754-var-delete var13
+755-var-update var14
+756-var-delete var14
+757-var-update var15
+758-var-delete var15
+759-var-update var16
+760-var-delete var16
+761-data-list-changed-registers
+762-environment-directory
+763-stack-list-arguments 0 0 0
+764-stack-list-locals 0
+765 whatis iq_data_i_path
+766 whatis iq_data_q_path
+767 whatis file_i
+768 ptype FILE *
+769 ptype file_i
+770 whatis file_q
+771 whatis search_start
+772 whatis search_length
+773 whatis result
+774 ptype DetectResult
+775 ptype result
+776-var-evaluate-expression var1
+777-var-evaluate-expression var2
+778-var-evaluate-expression var3
+779-var-evaluate-expression var4
+780-var-evaluate-expression var5
+781-var-evaluate-expression var6
+782-var-evaluate-expression var7
+783-exec-step 1
+784-thread-list-ids
+785-stack-info-depth
+786-stack-list-frames 0 1
+787-var-update var1
+788-var-update var2
+789-var-update var3
+790-var-update var4
+791-var-update var5
+792-var-update var6
+793-var-update var7
+794-var-update var8
+795-var-update var9
+796-var-update var10
+797-var-update var11
+798-var-update var12
+799-data-list-changed-registers
+800-environment-directory
+801-stack-list-arguments 0 0 0
+802-stack-list-locals 0
+803 kill
+804-data-evaluate-expression $_exitcode
+805-gdb-exit

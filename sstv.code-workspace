@@ -4,5 +4,10 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"detect_vis": "c",
+			"stdint.h": "c"
+		}
+	}
 }
