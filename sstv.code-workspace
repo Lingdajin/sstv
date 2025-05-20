@@ -7,7 +7,12 @@
 	"settings": {
 		"files.associations": {
 			"detect_vis": "c",
-			"stdint.h": "c"
+			"stdint.h": "c",
+			"math.h": "c",
+			"detect_vis_sync.h": "c",
+			"detect_parity_sync.h": "c",
+			"detect_line_sync.h": "c",
+			"user_task.h": "c"
 		}
 	}
 }

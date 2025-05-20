@@ -1,180 +1,1260 @@
-626-environment-directory
-627-environment-directory
-628-environment-directory
-629-interpreter-exec console echo
-630-environment-directory
-631-environment-cd D:/CodeField/GPT-AIoT-WorkSpace/sstv
-632-environment-directory
-633-thread-list-ids
-634-data-list-register-names
-635-break-insert sstv.c:182
-636-break-insert sstv.c:182
-637-break-insert sstv.c:206
-638-break-insert sstv.c:182
-639-break-insert sstv.c:182
-640-break-insert sstv.c:182
-641-break-insert sstv.c:182
-642-break-insert sstv.c:182
-643-break-insert sstv.c:182
-644-break-insert sstv.c:136
-645-break-insert detect_1900hz.c:97
-646-break-insert detect_1900hz.c:191
-647-break-insert detect_1900hz.c:216
-648-break-insert detect_VIS.c:95
-649-break-insert -t main
-650-exec-run
-651-thread-list-ids
-652-stack-info-depth
-653-stack-list-frames 0 1
-654-data-list-changed-registers
-655-environment-directory
-656-stack-list-arguments 0 0 0
-657-stack-list-locals 0
-658 whatis iq_data_i_path
-659 whatis iq_data_q_path
-660 whatis file_i
-661 ptype FILE *
-662 ptype file_i
-663 whatis file_q
-664 whatis search_start
-665 whatis search_length
-666 whatis result
-667 ptype DetectResult
-668 ptype result
-669-var-create - * iq_data_i_path
-670-var-evaluate-expression var1
-671-var-create - * iq_data_q_path
-672-var-evaluate-expression var2
-673-var-create - * file_i
-674-var-evaluate-expression var3
-675-var-create - * file_q
-676-var-evaluate-expression var4
-677-var-create - * search_start
-678-var-evaluate-expression var5
-679-var-create - * search_length
-680-var-evaluate-expression var6
-681-var-create - * result
-682-var-evaluate-expression var7
-683-break-insert detect_VIS.c:223
-684-exec-continue
-685-thread-list-ids
-686-stack-info-depth
-687-stack-list-frames 0 2
-688-data-list-changed-registers
-689-environment-directory
-690-stack-list-arguments 0 0 0
-691-stack-list-locals 0
-692 whatis file_i
-693 ptype FILE *
-694 ptype file_i
-695 whatis file_q
-696 whatis search_start
-697 whatis search_length
-698 whatis result
-699 ptype DetectResult
-700 ptype result
-701 whatis cos_1900
-702 whatis sin_1900
-703 whatis cos_1200
-704 whatis sin_1200
-705 whatis frame_read_size
-706 whatis i_buffer_raw
-707 whatis q_buffer_raw
-708 whatis I
-709 whatis Q
-710 whatis state
-711 ptype DetectState
-712 ptype state
-713 whatis frame_count
-714 whatis position
-715 whatis sequence_start
-716-var-create - * file_i
-717-var-evaluate-expression var8
-718-var-create - * file_q
-719-var-evaluate-expression var9
-720-var-create - * search_start
-721-var-evaluate-expression var10
-722-var-create - * search_length
-723-var-evaluate-expression var11
-724-var-create - * result
-725-var-evaluate-expression var12
-726-var-create - * cos_1900
-727-var-create - * sin_1900
-728-var-create - * &(cos_1900)
-729-var-set-format var15 hexadecimal
-730-break-delete 1
-731-var-evaluate-expression var15
-732-var-create - * &(sin_1900)
-733-var-set-format var16 hexadecimal
-734-var-evaluate-expression var16
-735-break-insert detect_VIS.c:95
-736-break-delete 4
-737-exec-continue
-738-thread-list-ids
-739-stack-info-depth
-740-stack-list-frames 0 1
-741-var-update var1
-742-var-update var2
-743-var-update var3
-744-var-update var4
-745-var-update var5
-746-var-update var6
-747-var-update var7
-748-var-update var8
-749-var-update var9
-750-var-update var10
-751-var-update var11
-752-var-update var12
-753-var-update var13
-754-var-delete var13
-755-var-update var14
-756-var-delete var14
-757-var-update var15
-758-var-delete var15
-759-var-update var16
-760-var-delete var16
-761-data-list-changed-registers
-762-environment-directory
-763-stack-list-arguments 0 0 0
-764-stack-list-locals 0
-765 whatis iq_data_i_path
-766 whatis iq_data_q_path
-767 whatis file_i
-768 ptype FILE *
-769 ptype file_i
-770 whatis file_q
-771 whatis search_start
-772 whatis search_length
-773 whatis result
-774 ptype DetectResult
-775 ptype result
-776-var-evaluate-expression var1
-777-var-evaluate-expression var2
-778-var-evaluate-expression var3
-779-var-evaluate-expression var4
-780-var-evaluate-expression var5
-781-var-evaluate-expression var6
-782-var-evaluate-expression var7
-783-exec-step 1
-784-thread-list-ids
-785-stack-info-depth
-786-stack-list-frames 0 1
-787-var-update var1
-788-var-update var2
-789-var-update var3
-790-var-update var4
-791-var-update var5
-792-var-update var6
-793-var-update var7
-794-var-update var8
-795-var-update var9
-796-var-update var10
-797-var-update var11
-798-var-update var12
-799-data-list-changed-registers
-800-environment-directory
-801-stack-list-arguments 0 0 0
-802-stack-list-locals 0
-803 kill
-804-data-evaluate-expression $_exitcode
-805-gdb-exit
+1-environment-directory
+2-environment-directory
+3-environment-directory
+4-interpreter-exec console echo
+5-environment-directory
+6-environment-cd D:/CodeField/GPT-AIoT-WorkSpace/sstv
+7-environment-directory
+8-thread-list-ids
+9-data-list-register-names
+10-break-insert sstv.c:182
+11-break-insert sstv.c:182
+12-break-insert sstv.c:206
+13-break-insert sstv.c:182
+14-break-insert sstv.c:182
+15-break-insert sstv.c:182
+16-break-insert sstv.c:182
+17-break-insert sstv.c:182
+18-break-insert sstv.c:182
+19-break-insert sstv.c:136
+20-break-insert detect_vis_sync.c:268
+21-break-insert detect_vis_sync.c:87
+22-break-insert detect_vis_sync.c:180
+23-break-insert -t main
+24-exec-run
+25-thread-list-ids
+26-stack-info-depth
+27-stack-list-frames 0 1
+28-data-list-changed-registers
+29-environment-directory
+30-stack-list-arguments 0 0 0
+31-stack-list-locals 0
+32 whatis iq_data_i_path
+33 whatis iq_data_q_path
+34 whatis file_i
+35 ptype FILE *
+36 ptype file_i
+37 whatis file_q
+38 whatis search_start
+39 whatis search_length
+40 whatis result
+41 ptype vis_result
+42 ptype result
+43-var-create - * iq_data_i_path
+44-var-create - * iq_data_q_path
+45-var-evaluate-expression var1
+46-var-create - * file_i
+47-var-evaluate-expression var2
+48-var-create - * file_q
+49-exec-continue
+50-thread-list-ids
+51-stack-info-depth
+52-stack-list-frames 0 2
+53-data-list-changed-registers
+54-environment-directory
+55-stack-list-arguments 0 0 0
+56-stack-list-locals 0
+57 whatis file_i
+58 ptype FILE *
+59 ptype file_i
+60 whatis file_q
+61 whatis search_start
+62 whatis search_length
+63 whatis i_buffer
+64 whatis q_buffer
+65 whatis freq_data
+66 whatis avg_freq
+67 whatis result
+68 ptype vis_result
+69 ptype result
+70 whatis state
+71 ptype VIS_State
+72 ptype state
+73 whatis position
+74 whatis first_1900_start
+75 whatis first_1900_end
+76 whatis freq_1200_pos
+77 whatis second_1900_start
+78 whatis consecutive_count
+79 whatis detection_completed
+80-var-create - * file_i
+81-var-evaluate-expression var5
+82-var-create - * file_q
+83-var-evaluate-expression var6
+84-var-create - * search_start
+85-var-evaluate-expression var7
+86-var-create - * search_length
+87-var-evaluate-expression var8
+88-var-create - * i_buffer
+89-var-evaluate-expression var9
+90-var-create - * q_buffer
+91-var-evaluate-expression var10
+92-var-create - * freq_data
+93-var-evaluate-expression var11
+94-break-delete 2
+95-break-insert detect_vis_sync.c:88
+96-break-delete 5
+97-exec-continue
+98-thread-list-ids
+99-stack-info-depth
+100-stack-list-frames 0 2
+101-var-update var5
+102-var-update var6
+103-var-update var7
+104-var-update var8
+105-var-update var9
+106-var-update var10
+107-var-update var11
+108-data-list-changed-registers
+109-environment-directory
+110-stack-list-arguments 0 0 0
+111-stack-list-locals 0
+112 whatis file_i
+113 ptype FILE *
+114 ptype file_i
+115 whatis file_q
+116 whatis search_start
+117 whatis search_length
+118 whatis i_buffer
+119 whatis q_buffer
+120 whatis freq_data
+121 whatis avg_freq
+122 whatis result
+123 ptype vis_result
+124 ptype result
+125 whatis state
+126 ptype VIS_State
+127 ptype state
+128 whatis position
+129 whatis first_1900_start
+130 whatis first_1900_end
+131 whatis freq_1200_pos
+132 whatis second_1900_start
+133 whatis consecutive_count
+134 whatis detection_completed
+135-var-evaluate-expression var5
+136-var-evaluate-expression var6
+137-var-evaluate-expression var7
+138-var-evaluate-expression var8
+139-var-evaluate-expression var9
+140-var-evaluate-expression var10
+141-var-evaluate-expression var11
+142-data-evaluate-expression calc_freq_avg
+143-var-create - * avg_freq
+144-var-evaluate-expression var12
+145-var-create - * result
+146-var-evaluate-expression var13
+147-var-create - * state
+148-var-evaluate-expression var14
+149-var-create - * position
+150-var-evaluate-expression var15
+151-var-create - * first_1900_start
+152-var-evaluate-expression var16
+153-var-create - * first_1900_end
+154-var-evaluate-expression var17
+155-var-create - * freq_1200_pos
+156-var-evaluate-expression var18
+157-var-create - * second_1900_start
+158-var-evaluate-expression var19
+159-var-create - * consecutive_count
+160-var-evaluate-expression var20
+161-var-create - * detection_completed
+162-var-evaluate-expression var21
+163-data-evaluate-expression avg_freq
+164-var-show-attributes var12
+165-data-evaluate-expression avg_freq
+166-exec-step 1
+167-thread-list-ids
+168-stack-info-depth
+169-stack-list-frames 0 3
+170-data-list-changed-registers
+171-environment-directory
+172-stack-list-arguments 0 0 0
+173-stack-list-locals 0
+174 whatis freq_data
+175 whatis length
+176 whatis sum
+177-var-create - * freq_data
+178-var-evaluate-expression var22
+179-var-create - * length
+180-var-evaluate-expression var23
+181-var-create - * sum
+182-var-evaluate-expression var24
+183-exec-finish
+184-thread-list-ids
+185-stack-info-depth
+186-stack-list-frames 0 2
+187-var-update var5
+188-var-update var6
+189-var-update var7
+190-var-update var8
+191-var-update var9
+192-var-update var10
+193-var-update var11
+194-var-update var12
+195-var-update var13
+196-var-update var14
+197-var-update var15
+198-var-update var16
+199-var-update var17
+200-var-update var18
+201-var-update var19
+202-var-update var20
+203-var-update var21
+204-var-update var22
+205-var-update var23
+206-var-delete var23
+207-var-update var24
+208-var-delete var24
+209-data-list-changed-registers
+210-environment-directory
+211-stack-list-arguments 0 0 0
+212-stack-list-locals 0
+213 whatis file_i
+214 ptype FILE *
+215 ptype file_i
+216 whatis file_q
+217 whatis search_start
+218 whatis search_length
+219 whatis i_buffer
+220 whatis q_buffer
+221 whatis freq_data
+222 whatis avg_freq
+223 whatis result
+224 ptype vis_result
+225 ptype result
+226 whatis state
+227 ptype VIS_State
+228 ptype state
+229 whatis position
+230 whatis first_1900_start
+231 whatis first_1900_end
+232 whatis freq_1200_pos
+233 whatis second_1900_start
+234 whatis consecutive_count
+235 whatis detection_completed
+236-var-evaluate-expression var5
+237-var-evaluate-expression var6
+238-var-evaluate-expression var7
+239-var-evaluate-expression var8
+240-var-evaluate-expression var9
+241-var-evaluate-expression var10
+242-var-evaluate-expression var11
+243-data-evaluate-expression avg_freq
+244-var-evaluate-expression var12
+245-var-evaluate-expression var13
+246-var-evaluate-expression var14
+247-var-evaluate-expression var15
+248-var-evaluate-expression var16
+249-var-evaluate-expression var17
+250-data-evaluate-expression avg_freq
+251-exec-next 1
+252-thread-list-ids
+253-stack-info-depth
+254-stack-list-frames 0 2
+255-var-update var5
+256-var-update var6
+257-var-update var7
+258-var-update var8
+259-var-update var9
+260-var-update var10
+261-var-update var11
+262-var-update var12
+263-var-update var13
+264-var-update var14
+265-var-update var15
+266-var-update var16
+267-var-update var17
+268-var-update var18
+269-var-update var19
+270-var-update var20
+271-var-update var21
+272-var-update var22
+273-data-list-changed-registers
+274-environment-directory
+275-stack-list-arguments 0 0 0
+276-stack-list-locals 0
+277-var-evaluate-expression var12
+278-data-evaluate-expression avg_freq
+279-exec-continue
+280-thread-list-ids
+281-stack-info-depth
+282-stack-list-frames 0 2
+283-var-update var5
+284-var-update var6
+285-var-update var7
+286-var-update var8
+287-var-update var9
+288-var-update var10
+289-var-update var11
+290-var-update var12
+291-var-update var13
+292-var-update var14
+293-var-update var15
+294-var-update var16
+295-var-update var17
+296-var-update var18
+297-var-update var19
+298-var-update var20
+299-var-update var21
+300-var-update var22
+301-data-list-changed-registers
+302-environment-directory
+303-stack-list-arguments 0 0 0
+304-stack-list-locals 0
+305 whatis file_i
+306 ptype FILE *
+307 ptype file_i
+308 whatis file_q
+309 whatis search_start
+310 whatis search_length
+311 whatis i_buffer
+312 whatis q_buffer
+313 whatis freq_data
+314 whatis avg_freq
+315 whatis result
+316 ptype vis_result
+317 ptype result
+318 whatis state
+319 ptype VIS_State
+320-break-insert detect_vis_sync.c:182
+321 ptype state
+322 whatis position
+323 whatis first_1900_start
+324 whatis first_1900_end
+325 whatis freq_1200_pos
+326 whatis second_1900_start
+327 whatis consecutive_count
+328 whatis detection_completed
+329-var-evaluate-expression var5
+330-var-evaluate-expression var6
+331-var-evaluate-expression var7
+332-var-evaluate-expression var8
+333-var-evaluate-expression var9
+334-var-evaluate-expression var10
+335-var-evaluate-expression var11
+336-break-delete 3
+337-exec-continue
+338-thread-list-ids
+339-stack-info-depth
+340-stack-list-frames 0 2
+341-var-update var5
+342-var-update var6
+343-var-update var7
+344-var-update var8
+345-var-update var9
+346-var-update var10
+347-var-update var11
+348-var-update var12
+349-var-update var13
+350-var-update var14
+351-var-update var15
+352-var-update var16
+353-var-update var17
+354-var-update var18
+355-var-update var19
+356-var-update var20
+357-var-update var21
+358-var-update var22
+359-data-list-changed-registers
+360-environment-directory
+361-stack-list-arguments 0 0 0
+362-stack-list-locals 0
+363 whatis file_i
+364 ptype FILE *
+365 ptype file_i
+366 whatis file_q
+367 whatis search_start
+368 whatis search_length
+369 whatis i_buffer
+370 whatis q_buffer
+371 whatis freq_data
+372 whatis avg_freq
+373 whatis result
+374 ptype vis_result
+375 ptype result
+376 whatis state
+377 ptype VIS_State
+378 ptype state
+379 whatis position
+380 whatis first_1900_start
+381 whatis first_1900_end
+382 whatis freq_1200_pos
+383 whatis second_1900_start
+384 whatis consecutive_count
+385 whatis detection_completed
+386-var-evaluate-expression var5
+387-var-evaluate-expression var6
+388-var-evaluate-expression var7
+389-var-evaluate-expression var8
+390-var-evaluate-expression var9
+391-var-evaluate-expression var10
+392-var-evaluate-expression var11
+393-data-evaluate-expression avg_freq
+394-exec-continue
+395-thread-list-ids
+396-stack-info-depth
+397-stack-list-frames 0 2
+398-var-update var5
+399-var-update var6
+400-var-update var7
+401-var-update var8
+402-var-update var9
+403-var-update var10
+404-var-update var11
+405-var-update var12
+406-var-update var13
+407-var-update var14
+408-var-update var15
+409-var-update var16
+410-var-update var17
+411-var-update var18
+412-var-update var19
+413-var-update var20
+414-var-update var21
+415-var-update var22
+416-data-list-changed-registers
+417-environment-directory
+418-stack-list-arguments 0 0 0
+419-stack-list-locals 0
+420 whatis file_i
+421 ptype FILE *
+422 ptype file_i
+423 whatis file_q
+424 whatis search_start
+425 whatis search_length
+426 whatis i_buffer
+427 whatis q_buffer
+428 whatis freq_data
+429 whatis avg_freq
+430 whatis result
+431 ptype vis_result
+432 ptype result
+433 whatis state
+434 ptype VIS_State
+435 ptype state
+436 whatis position
+437 whatis first_1900_start
+438 whatis first_1900_end
+439 whatis freq_1200_pos
+440 whatis second_1900_start
+441-data-evaluate-expression avg_freq
+442 whatis consecutive_count
+443 whatis detection_completed
+444-var-evaluate-expression var5
+445-var-evaluate-expression var6
+446-var-evaluate-expression var7
+447-var-evaluate-expression var8
+448-var-evaluate-expression var9
+449-var-evaluate-expression var10
+450-var-evaluate-expression var11
+451-data-evaluate-expression avg_freq
+452-exec-continue
+453-thread-list-ids
+454-stack-info-depth
+455-stack-list-frames 0 2
+456-var-update var5
+457-var-update var6
+458-var-update var7
+459-var-update var8
+460-var-update var9
+461-var-update var10
+462-var-update var11
+463-var-update var12
+464-var-update var13
+465-var-update var14
+466-var-update var15
+467-var-update var16
+468-var-update var17
+469-var-update var18
+470-var-update var19
+471-var-update var20
+472-var-update var21
+473-var-update var22
+474-data-list-changed-registers
+475-environment-directory
+476-stack-list-arguments 0 0 0
+477-stack-list-locals 0
+478 whatis file_i
+479 ptype FILE *
+480 ptype file_i
+481 whatis file_q
+482 whatis search_start
+483 whatis search_length
+484 whatis i_buffer
+485 whatis q_buffer
+486 whatis freq_data
+487 whatis avg_freq
+488 whatis result
+489 ptype vis_result
+490 ptype result
+491 whatis state
+492 ptype VIS_State
+493 ptype state
+494 whatis position
+495 whatis first_1900_start
+496 whatis first_1900_end
+497 whatis freq_1200_pos
+498 whatis second_1900_start
+499 whatis consecutive_count
+500 whatis detection_completed
+501-var-evaluate-expression var5
+502-var-evaluate-expression var6
+503-var-evaluate-expression var7
+504-var-evaluate-expression var8
+505-var-evaluate-expression var9
+506-var-evaluate-expression var10
+507-data-evaluate-expression avg_freq
+508-var-evaluate-expression var11
+509-data-evaluate-expression freq_data
+510-data-evaluate-expression search_start
+511-data-evaluate-expression position
+512-exec-continue
+513-thread-list-ids
+514-stack-info-depth
+515-stack-list-frames 0 2
+516-var-update var5
+517-var-update var6
+518-var-update var7
+519-var-update var8
+520-var-update var9
+521-var-update var10
+522-var-update var11
+523-var-update var12
+524-var-update var13
+525-var-update var14
+526-var-update var15
+527-var-update var16
+528-var-update var17
+529-var-update var18
+530-var-update var19
+531-var-update var20
+532-var-update var21
+533-var-update var22
+534-data-list-changed-registers
+535-environment-directory
+536-stack-list-arguments 0 0 0
+537-stack-list-locals 0
+538 whatis file_i
+539 ptype FILE *
+540 ptype file_i
+541 whatis file_q
+542 whatis search_start
+543 whatis search_length
+544 whatis i_buffer
+545 whatis q_buffer
+546 whatis freq_data
+547 whatis avg_freq
+548 whatis result
+549 ptype vis_result
+550 ptype result
+551 whatis state
+552 ptype VIS_State
+553 ptype state
+554 whatis position
+555 whatis first_1900_start
+556 whatis first_1900_end
+557 whatis freq_1200_pos
+558 whatis second_1900_start
+559 whatis consecutive_count
+560 whatis detection_completed
+561-var-evaluate-expression var5
+562-var-evaluate-expression var6
+563-var-evaluate-expression var7
+564-var-evaluate-expression var8
+565-var-evaluate-expression var9
+566-var-evaluate-expression var10
+567-var-evaluate-expression var11
+568-break-insert detect_vis_sync.c:188
+569-break-delete 6
+570-exec-continue
+571-thread-list-ids
+572-stack-info-depth
+573-stack-list-frames 0 2
+574-var-update var5
+575-var-update var6
+576-var-update var7
+577-var-update var8
+578-var-update var9
+579-var-update var10
+580-var-update var11
+581-var-update var12
+582-var-update var13
+583-var-update var14
+584-var-update var15
+585-var-update var16
+586-var-update var17
+587-var-update var18
+588-var-update var19
+589-var-update var20
+590-var-update var21
+591-var-update var22
+592-data-list-changed-registers
+593-environment-directory
+594-stack-list-arguments 0 0 0
+595-stack-list-locals 0
+596 whatis file_i
+597 ptype FILE *
+598 ptype file_i
+599 whatis file_q
+600 whatis search_start
+601 whatis search_length
+602 whatis i_buffer
+603 whatis q_buffer
+604 whatis freq_data
+605 whatis avg_freq
+606 whatis result
+607 ptype vis_result
+608 ptype result
+609 whatis state
+610 ptype VIS_State
+611 ptype state
+612 whatis position
+613 whatis first_1900_start
+614 whatis first_1900_end
+615 whatis freq_1200_pos
+616 whatis second_1900_start
+617 whatis consecutive_count
+618 whatis detection_completed
+619-var-evaluate-expression var5
+620-var-evaluate-expression var6
+621-var-evaluate-expression var7
+622-var-evaluate-expression var8
+623-var-evaluate-expression var9
+624-var-evaluate-expression var10
+625-var-evaluate-expression var11
+626-break-insert detect_vis_sync.c:182
+627-break-delete 7
+628-var-evaluate-expression var12
+629-var-evaluate-expression var13
+630-var-evaluate-expression var14
+631-var-evaluate-expression var15
+632-var-evaluate-expression var16
+633-var-evaluate-expression var17
+634-var-evaluate-expression var18
+635-var-evaluate-expression var19
+636-var-evaluate-expression var20
+637-var-evaluate-expression var21
+638-data-evaluate-expression avg_freq
+639-var-show-attributes var15
+640-data-evaluate-expression position
+641-exec-continue
+642-thread-list-ids
+643-stack-info-depth
+644-stack-list-frames 0 2
+645-var-update var5
+646-var-update var6
+647-var-update var7
+648-var-update var8
+649-var-update var9
+650-var-update var10
+651-var-update var11
+652-var-update var12
+653-var-update var13
+654-var-update var14
+655-var-update var15
+656-var-update var16
+657-var-update var17
+658-var-update var18
+659-var-update var19
+660-var-update var20
+661-var-update var21
+662-var-update var22
+663-data-list-changed-registers
+664-environment-directory
+665-stack-list-arguments 0 0 0
+666-stack-list-locals 0
+667 whatis file_i
+668 ptype FILE *
+669 ptype file_i
+670 whatis file_q
+671 whatis search_start
+672 whatis search_length
+673 whatis i_buffer
+674 whatis q_buffer
+675 whatis freq_data
+676 whatis avg_freq
+677 whatis result
+678-data-evaluate-expression avg_freq
+679 ptype vis_result
+680 ptype result
+681 whatis state
+682 ptype VIS_State
+683 ptype state
+684 whatis position
+685 whatis first_1900_start
+686 whatis first_1900_end
+687 whatis freq_1200_pos
+688 whatis second_1900_start
+689 whatis consecutive_count
+690 whatis detection_completed
+691-var-evaluate-expression var5
+692-var-evaluate-expression var6
+693-var-evaluate-expression var7
+694-var-evaluate-expression var8
+695-var-evaluate-expression var9
+696-var-evaluate-expression var10
+697-var-evaluate-expression var11
+698-var-evaluate-expression var12
+699-var-evaluate-expression var13
+700-var-evaluate-expression var14
+701-var-evaluate-expression var15
+702-var-evaluate-expression var16
+703-var-evaluate-expression var17
+704-var-evaluate-expression var18
+705-var-evaluate-expression var19
+706-var-evaluate-expression var20
+707-var-evaluate-expression var21
+708-data-evaluate-expression position
+709-data-evaluate-expression WINDOW_1MS
+710-data-evaluate-expression fm_demodulate_fx
+711-data-evaluate-expression i_buffer
+712-data-evaluate-expression freq_data
+713-var-list-children var11
+714-var-info-expression var11
+715-var-evaluate-expression var11.*
+716-data-evaluate-expression position
+717-var-show-attributes var11.*
+718-data-evaluate-expression *(freq_data)
+719-data-evaluate-expression freq_data
+720-data-evaluate-expression freq_data
+721-data-evaluate-expression calc_freq_avg
+722-exec-finish
+723-thread-list-ids
+724-stack-info-depth
+725-stack-list-frames 0 2
+726-var-update var5
+727-var-update var6
+728-var-update var7
+729-var-update var8
+730-var-update var9
+731-var-update var10
+732-var-update var11
+733-var-update var12
+734-var-update var13
+735-var-update var14
+736-var-update var15
+737-var-update var16
+738-var-update var17
+739-var-update var18
+740-var-update var19
+741-var-update var20
+742-var-update var21
+743-var-update var22
+744-data-list-changed-registers
+745-environment-directory
+746-stack-list-arguments 0 0 0
+747-stack-list-locals 0
+748-var-evaluate-expression var9
+749-var-list-children var11
+750-var-evaluate-expression var11
+751-var-evaluate-expression var12
+752-var-evaluate-expression var11.*
+753-var-evaluate-expression var15
+754-var-evaluate-expression var20
+755-data-evaluate-expression avg_freq
+756-data-evaluate-expression calc_freq_avg
+757-data-evaluate-expression freq_data
+758-exec-finish
+759-thread-list-ids
+760-stack-info-depth
+761-stack-list-frames 0 2
+762-var-update var5
+763-var-update var6
+764-var-update var7
+765-var-update var8
+766-var-update var9
+767-var-update var10
+768-var-update var11
+769-var-update var12
+770-var-update var13
+771-var-update var14
+772-var-update var15
+773-var-update var16
+774-var-update var17
+775-var-update var18
+776-var-update var19
+777-var-update var20
+778-var-update var21
+779-var-update var22
+780-data-list-changed-registers
+781-environment-directory
+782-stack-list-arguments 0 0 0
+783-stack-list-locals 0
+784-var-evaluate-expression var11
+785-var-list-children var11
+786-var-evaluate-expression var15
+787-var-evaluate-expression var18
+788-var-evaluate-expression var20
+789-data-evaluate-expression is_freq_match
+790-data-evaluate-expression avg_freq
+791-data-evaluate-expression consecutive_count
+792-data-evaluate-expression calc_freq_avg
+793-data-evaluate-expression avg_freq
+794-exec-finish
+795-thread-list-ids
+796-stack-info-depth
+797-stack-list-frames 0 2
+798-var-update var5
+799-var-update var6
+800-var-update var7
+801-var-update var8
+802-var-update var9
+803-var-update var10
+804-var-update var11
+805-var-update var12
+806-var-update var13
+807-var-update var14
+808-var-update var15
+809-var-update var16
+810-var-update var17
+811-var-update var18
+812-var-update var19
+813-var-update var20
+814-var-update var21
+815-var-update var22
+816-data-list-changed-registers
+817-environment-directory
+818-stack-list-arguments 0 0 0
+819-stack-list-locals 0
+820-var-evaluate-expression var11
+821-var-list-children var11
+822-var-evaluate-expression var15
+823-var-evaluate-expression var20
+824-break-insert detect_vis_sync.c:177
+825-data-evaluate-expression avg_freq
+826-exec-continue
+827-thread-list-ids
+828-stack-info-depth
+829-stack-list-frames 0 2
+830-var-update var5
+831-var-update var6
+832-var-update var7
+833-var-update var8
+834-var-update var9
+835-var-update var10
+836-var-update var11
+837-var-update var12
+838-var-update var13
+839-var-update var14
+840-var-update var15
+841-var-update var16
+842-var-update var17
+843-var-update var18
+844-var-update var19
+845-var-update var20
+846-var-update var21
+847-var-update var22
+848-data-list-changed-registers
+849-environment-directory
+850-stack-list-arguments 0 0 0
+851-stack-list-locals 0
+852 whatis file_i
+853 ptype FILE *
+854 ptype file_i
+855 whatis file_q
+856 whatis search_start
+857 whatis search_length
+858 whatis i_buffer
+859 whatis q_buffer
+860 whatis freq_data
+861 whatis avg_freq
+862 whatis result
+863 ptype vis_result
+864 ptype result
+865-data-evaluate-expression fm_demodulate_fx
+866 whatis state
+867 ptype VIS_State
+868 ptype state
+869 whatis position
+870 whatis first_1900_start
+871 whatis first_1900_end
+872 whatis freq_1200_pos
+873 whatis second_1900_start
+874 whatis consecutive_count
+875 whatis detection_completed
+876-var-evaluate-expression var5
+877-var-evaluate-expression var6
+878-var-evaluate-expression var7
+879-var-evaluate-expression var8
+880-var-evaluate-expression var9
+881-var-evaluate-expression var10
+882-var-evaluate-expression var11
+883-data-evaluate-expression freq_data
+884-var-evaluate-expression var12
+885-var-evaluate-expression var13
+886-var-evaluate-expression var14
+887-var-evaluate-expression var15
+888-var-evaluate-expression var16
+889-var-evaluate-expression var17
+890-var-list-children var11
+891-var-evaluate-expression var11.*
+892-var-show-attributes var11.*
+893-data-evaluate-expression *(freq_data)
+894-data-evaluate-expression avg_freq
+895-data-evaluate-expression *(freq_data)
+896-data-evaluate-expression avg_freq
+897-exec-step 1
+898-thread-list-ids
+899-stack-info-depth
+900-stack-list-frames 0 3
+901-var-update var22
+902-var-delete var22
+903-data-list-changed-registers
+904-environment-directory
+905-stack-list-arguments 0 0 0
+906-stack-list-locals 0
+907 whatis I
+908 whatis Q
+909 whatis length
+910 whatis freq_fx
+911 whatis sample_rate
+912 whatis t12453ad0
+913 whatis t12453c08
+914 whatis fx_phase
+915 whatis fx_unwrapped
+916-var-create - * I
+917-var-evaluate-expression var25
+918-var-create - * Q
+919-var-evaluate-expression var26
+920-var-create - * length
+921-var-evaluate-expression var27
+922-var-create - * freq_fx
+923-var-evaluate-expression var28
+924-var-create - * sample_rate
+925-var-evaluate-expression var29
+926-var-create - * t12453ad0
+927-var-evaluate-expression var30
+928-var-create - * t12453c08
+929-var-evaluate-expression var31
+930-data-evaluate-expression sb_fxatan
+931-var-show-attributes var28
+932-data-evaluate-expression freq_fx
+933-data-evaluate-expression freq_fx
+934-var-list-children var28
+935-var-info-expression var28
+936-var-evaluate-expression var28.*
+937-data-evaluate-expression freq_fx
+938-var-list-children var25
+939-var-info-expression var25
+940-var-evaluate-expression var25.*
+941-data-evaluate-expression freq_fx
+942-var-show-attributes var26
+943-data-evaluate-expression Q
+944-var-list-children var26
+945-var-info-expression var26
+946-var-evaluate-expression var26.*
+947-data-evaluate-expression Q
+948-break-insert main.c:406
+949-exec-continue
+950-thread-list-ids
+951-stack-info-depth
+952-stack-list-frames 0 3
+953-var-update var25
+954-var-update var26
+955-var-update var27
+956-var-update var28
+957-var-update var29
+958-var-update var30
+959-var-update var31
+960-data-list-changed-registers
+961-environment-directory
+962-stack-list-arguments 0 0 0
+963-stack-list-locals 0
+964 whatis I
+965 whatis Q
+966 whatis length
+967 whatis freq_fx
+968 whatis sample_rate
+969 whatis t12453ad0
+970 whatis t12453c08
+971 whatis fx_phase
+972 whatis fx_unwrapped
+973-var-evaluate-expression var25
+974-var-evaluate-expression var26
+975-var-evaluate-expression var27
+976-break-delete 10
+977-var-evaluate-expression var28
+978-var-evaluate-expression var29
+979-var-evaluate-expression var30
+980-var-evaluate-expression var31
+981-data-evaluate-expression fx_unwrapped
+982-data-evaluate-expression fx_phase
+983-var-create - * fx_phase
+984-var-evaluate-expression var32
+985-var-create - * fx_unwrapped
+986-var-evaluate-expression var33
+987-var-list-children var32
+988-var-info-expression var32
+989-var-evaluate-expression var32.*
+990-break-insert main.c:426
+991-exec-continue
+992-thread-list-ids
+993-stack-info-depth
+994-stack-list-frames 0 3
+995-var-update var25
+996-var-update var26
+997-var-update var27
+998-var-update var28
+999-var-update var29
+1000-var-update var30
+1001-var-update var31
+1002-var-update var32
+1003-var-update var33
+1004-data-list-changed-registers
+1005-environment-directory
+1006-stack-list-arguments 0 0 0
+1007-stack-list-locals 0
+1008 whatis I
+1009 whatis Q
+1010 whatis length
+1011 whatis freq_fx
+1012 whatis sample_rate
+1013 whatis phase_diff
+1014 whatis i
+1015 whatis t12453ad0
+1016 whatis t12453c08
+1017 whatis fx_phase
+1018 whatis fx_unwrapped
+1019-var-evaluate-expression var25
+1020-var-create - * phase_diff
+1021-var-evaluate-expression var26
+1022-var-create - * i
+1023-var-evaluate-expression var27
+1024-var-evaluate-expression var28
+1025-var-evaluate-expression var29
+1026-var-evaluate-expression var34
+1027-var-evaluate-expression var35
+1028-exec-continue
+1029-thread-list-ids
+1030-stack-info-depth
+1031-stack-list-frames 0 3
+1032-var-update var25
+1033-var-update var26
+1034-var-update var27
+1035-var-update var28
+1036-var-update var29
+1037-var-update var30
+1038-var-update var31
+1039-var-update var32
+1040-var-update var33
+1041-var-update var34
+1042-var-update var35
+1043-data-list-changed-registers
+1044-environment-directory
+1045-stack-list-arguments 0 0 0
+1046-stack-list-locals 0
+1047 whatis I
+1048 whatis Q
+1049 whatis length
+1050 whatis freq_fx
+1051 whatis sample_rate
+1052 whatis phase_diff
+1053 whatis i
+1054 whatis t12453ad0
+1055 whatis t12453c08
+1056 whatis fx_phase
+1057 whatis fx_unwrapped
+1058-var-evaluate-expression var25
+1059-var-evaluate-expression var26
+1060-var-evaluate-expression var27
+1061-var-evaluate-expression var28
+1062-var-evaluate-expression var29
+1063-var-evaluate-expression var34
+1064-var-evaluate-expression var35
+1065-var-list-children var28
+1066-var-evaluate-expression var28.*
+1067-var-show-attributes var28.*
+1068-data-evaluate-expression *(freq_fx)
+1069-data-evaluate-expression freq_fx
+1070-exec-continue
+1071-thread-list-ids
+1072-stack-info-depth
+1073-stack-list-frames 0 3
+1074-var-update var25
+1075-var-update var26
+1076-var-update var27
+1077-var-update var28
+1078-var-update var29
+1079-var-update var30
+1080-var-update var31
+1081-var-update var32
+1082-var-update var33
+1083-var-update var34
+1084-var-update var35
+1085-data-list-changed-registers
+1086-environment-directory
+1087-stack-list-arguments 0 0 0
+1088-stack-list-locals 0
+1089 whatis I
+1090 whatis Q
+1091 whatis length
+1092 whatis freq_fx
+1093 whatis sample_rate
+1094 whatis phase_diff
+1095 whatis i
+1096 whatis t12453ad0
+1097 whatis t12453c08
+1098 whatis fx_phase
+1099 whatis fx_unwrapped
+1100-var-evaluate-expression var25
+1101-var-evaluate-expression var26
+1102-var-evaluate-expression var27
+1103-var-evaluate-expression var28
+1104-var-evaluate-expression var29
+1105-var-evaluate-expression var34
+1106-var-evaluate-expression var35
+1107-var-list-children var28
+1108-var-evaluate-expression var28.*
+1109-break-delete 11
+1110-break-insert detect_vis_sync.c:180
+1111-break-delete 9
+1112-exec-continue
+1113-thread-list-ids
+1114-stack-info-depth
+1115-stack-list-frames 0 2
+1116-var-update var5
+1117-var-update var6
+1118-var-update var7
+1119-var-update var8
+1120-var-update var9
+1121-var-update var10
+1122-var-update var11
+1123-var-update var12
+1124-var-update var13
+1125-var-update var14
+1126-var-update var15
+1127-var-update var16
+1128-var-update var17
+1129-var-update var18
+1130-var-update var19
+1131-var-update var20
+1132-var-update var21
+1133-var-update var25
+1134-var-delete var25
+1135-var-update var26
+1136-var-delete var26
+1137-var-update var27
+1138-var-delete var27
+1139-var-update var28
+1140-var-delete var28
+1141-var-update var29
+1142-var-delete var29
+1143-var-update var30
+1144-var-delete var30
+1145-var-update var31
+1146-var-delete var31
+1147-var-update var32
+1148-var-delete var32
+1149-var-update var33
+1150-var-delete var33
+1151-var-update var34
+1152-var-delete var34
+1153-var-update var35
+1154-var-delete var35
+1155-data-list-changed-registers
+1156-environment-directory
+1157-stack-list-arguments 0 0 0
+1158-stack-list-locals 0
+1159 whatis file_i
+1160 ptype FILE *
+1161 ptype file_i
+1162 whatis file_q
+1163 whatis search_start
+1164 whatis search_length
+1165 whatis i_buffer
+1166 whatis q_buffer
+1167 whatis freq_data
+1168 whatis avg_freq
+1169 whatis result
+1170 ptype vis_result
+1171 ptype result
+1172 whatis state
+1173-exec-step 1
+1174 ptype VIS_State
+1175 ptype state
+1176 whatis position
+1177 ptype 
+1178 ptype position
+1179 whatis first_1900_start
+1180 whatis first_1900_end
+1181 whatis freq_1200_pos
+1182 whatis second_1900_start
+1183 whatis consecutive_count
+1184 whatis detection_completed
+1185-thread-list-ids
+1186-stack-info-depth
+1187-stack-list-frames 0 3
+1188-data-list-changed-registers
+1189-environment-directory
+1190-stack-list-arguments 0 0 0
+1191-stack-list-locals 0
+1192 whatis freq_data
+1193 whatis length
+1194 whatis sum
+1195-var-create - * freq_data
+1196-var-evaluate-expression var36
+1197-var-create - * length
+1198-var-evaluate-expression var37
+1199-var-create - * sum
+1200-var-evaluate-expression var38
+1201-data-evaluate-expression freq_data
+1202-data-evaluate-expression length
+1203-var-list-children var36
+1204-var-info-expression var36
+1205-var-evaluate-expression var36.*
+1206-var-show-attributes var36.*
+1207-data-evaluate-expression *(freq_data)
+1208-data-evaluate-expression sum
+1209-exec-step 1
+1210-thread-list-ids
+1211-stack-info-depth
+1212-stack-list-frames 0 3
+1213-var-update var36
+1214-var-update var37
+1215-var-update var38
+1216-data-list-changed-registers
+1217-environment-directory
+1218-stack-list-arguments 0 0 0
+1219-stack-list-locals 0
+1220-data-evaluate-expression *(freq_data)
+1221-exec-step 1
+1222-thread-list-ids
+1223-stack-info-depth
+1224-stack-list-frames 0 3
+1225-var-update var36
+1226-var-update var37
+1227-var-update var38
+1228-data-list-changed-registers
+1229-environment-directory
+1230-stack-list-arguments 0 0 0
+1231-stack-list-locals 0
+1232 whatis i
+1233-var-create - * i
+1234-var-evaluate-expression var38
+1235-data-evaluate-expression *(freq_data)
+1236-var-evaluate-expression var39
+1237-break-insert detect_vis_sync.c:44
+1238-exec-continue
+1239-thread-list-ids
+1240-stack-info-depth
+1241-stack-list-frames 0 3
+1242-var-update var36
+1243-var-update var37
+1244-var-update var38
+1245-var-update var39
+1246-var-delete var39
+1247-data-list-changed-registers
+1248-environment-directory
+1249-stack-list-arguments 0 0 0
+1250-stack-list-locals 0
+1251 whatis freq_data
+1252 whatis length
+1253 whatis sum
+1254-var-evaluate-expression var36
+1255-var-evaluate-expression var37
+1256-var-evaluate-expression var38
+1257-data-evaluate-expression WINDOW_10MS
+1258 kill
+1260-data-evaluate-expression $_exitcode
+1261-gdb-exit

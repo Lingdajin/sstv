@@ -17,6 +17,11 @@
 							<targetPlatform archList="xcoff-mt8" binaryParser="org.eclipse.cdt.sandblaster.binparser" id="com.sandbridgetech.sbdt.targetPlatform.949485389" isAbstract="false" name="GPT Simulator" osList="sbos,linux,other" superClass="com.sandbridgetech.sbdt.targetPlatform"/>
 							<builder id="com.sandbridgetech.sbdt.builder.1281962845" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="GPT DSP Builder" superClass="com.sandbridgetech.sbdt.builder"/>
 							<tool id="com.sandbridgetech.sbdt.tool.compiler.debug.1394748654" name="GPT DSP C Compiler" superClass="com.sandbridgetech.sbdt.tool.compiler.debug">
+								<option id="com.sandbridgetech.sbdt.optionIncludePath.2087982170" name="Include Path (-I)" superClass="com.sandbridgetech.sbdt.optionIncludePath" valueType="includePath">
+									<listOptionValue builtIn="false" value="${SBROOT}/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/sstv/Sources/Lib}&quot;"/>
+								</option>
+								<option id="com.sandbridgetech.sbdt.pathsymbolinc.962980700" name="SBROOT DSP Include Directory" superClass="com.sandbridgetech.sbdt.pathsymbolinc" valueType="includePath"/>
 								<inputType id="com.sandbridgetech.sbdt.compiler.input.2088369419" name="Compiler Input" superClass="com.sandbridgetech.sbdt.compiler.input"/>
 							</tool>
 							<tool id="com.sandbridgetech.sbdt.tool.compiler.cpp.debug.1000593140" name="GPT DSP C++ Compiler" superClass="com.sandbridgetech.sbdt.tool.compiler.cpp.debug"/>
@@ -43,7 +48,11 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/sstv"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 		<buildTargets>
 			<target name="clobber" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">

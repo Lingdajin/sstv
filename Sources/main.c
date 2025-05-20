@@ -392,8 +392,8 @@ void process_line_ry_by_fx(FILE* file_i, FILE* file_q, int group_number, short* 
 
 // 定点数版的FM解调函数
 void fm_demodulate_fx(short* I, short* Q, int length, short* freq_fx, int sample_rate) {
-    static short fx_phase[Y_NUM];       // 使用静态数组避免栈溢出
-    static int fx_unwrapped[Y_NUM];
+    short fx_phase[length];       // 使用静态数组避免栈溢出
+    int fx_unwrapped[length];
 
 
     // 计算每个采样点的相位 - 使用SB3500平台提供的sb_fxatan函数

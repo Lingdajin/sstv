@@ -15,12 +15,15 @@ BUILD_DIR=Build
 # Source files directory
 SOURCE_DIR=Sources
 
+PROJ_DIR=.
+
 # Source files. The Files of the following types are 
 # supported: *.c, *.s, *.SS
 SOURCE_FILES= \
-	main.c \
-	fft.c \
-	detect_vis_sync.c
+	user_task.c \
+	detect_vis_sync.c \
+	detect_line_sync.c \
+	detect_parity_sync.c
 
 # DLL source files
 DLL_SOURCE_FILES=\
@@ -55,8 +58,11 @@ CAT="$(SBROOT)/msys/bin/cat"
 # C compiler flags common to all source files
 CFLAGS=--restrict --inline $(XCFLAGS) --c99 -g
 
+HEAD_DIR = $(PROJ_DIR)/Sources/Lib
+
 # C preprocessor include directories common to all source files
-CPPINC=-ISources
+CPPINC=\
+		-I$(HEAD_DIR)
 
 # C preprocessor definitions common to all source files
 CPPDEF=$(XCPPDEF)

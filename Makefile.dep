@@ -1,3 +1,14 @@
-Build/main.o Build/main.d: Sources/main.c
-Build/fft.o Build/fft.d: Sources/fft.c
+Build/user_task.o Build/user_task.d: Sources/user_task.c
+Build/user_task.o Build/user_task.d: ./Sources/Lib/user_task.h
+Build/user_task.o Build/user_task.d: ./Sources/Lib/detect_vis_sync.h
+Build/user_task.o Build/user_task.d: ./Sources/Lib/detect_line_sync.h
+Build/user_task.o Build/user_task.d: ./Sources/Lib/detect_parity_sync.h
 Build/detect_vis_sync.o Build/detect_vis_sync.d: Sources/detect_vis_sync.c
+Build/detect_vis_sync.o Build/detect_vis_sync.d: ./Sources/Lib/detect_vis_sync.h
+Build/detect_vis_sync.o Build/detect_vis_sync.d: ./Sources/Lib/user_task.h
+Build/detect_line_sync.o Build/detect_line_sync.d: Sources/detect_line_sync.c
+Build/detect_line_sync.o Build/detect_line_sync.d: ./Sources/Lib/detect_line_sync.h
+Build/detect_line_sync.o Build/detect_line_sync.d: ./Sources/Lib/user_task.h
+Build/detect_parity_sync.o Build/detect_parity_sync.d: Sources/detect_parity_sync.c
+Build/detect_parity_sync.o Build/detect_parity_sync.d: ./Sources/Lib/detect_parity_sync.h
+Build/detect_parity_sync.o Build/detect_parity_sync.d: ./Sources/Lib/user_task.h
