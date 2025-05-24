@@ -75,6 +75,32 @@ typedef struct {
     int pulse_frequency;       // 检测到的分割脉冲频率
 } parity_result;
 
+// 状态机状态
+typedef enum {
+    PARITY_STATE_IDLE,                // 初始状态，搜索第一个1200Hz
+    PARITY_STATE_FOUND_1500,    // 找到第一个1200Hz，准备跳跃
+    PARITY_STATE_FOUND_2300,    // 找到第一个1200Hz，准备跳跃
+    PARITY_STATE_SEARCHING_1900,      // 搜索1500Hz信号
+    PARITY_STATE_COMPLETE             // 完整检测到序列
+} Parity_State;
+
+// 状态机状态
+typedef enum {
+    VIS_STATE_IDLE,                // 初始状态，搜索第一个1900Hz
+    VIS_STATE_FOUND_1900_FIRST,    // 找到第一个1900Hz，准备跳跃
+    VIS_STATE_SEARCHING_1200,      // 搜索1200Hz信号
+    VIS_STATE_FOUND_1200,          // 找到1200Hz，搜索第二个1900Hz
+    VIS_STATE_COMPLETE             // 完整检测到序列
+} VIS_State;
+
+// 状态机状态
+typedef enum {
+    STATE_IDLE,                // 初始状态，搜索第一个1200Hz
+    STATE_FOUND_1200_FIRST,    // 找到第一个1200Hz，准备跳跃
+    STATE_SEARCHING_1500,      // 搜索1500Hz信号
+    STATE_COMPLETE             // 完整检测到序列
+} Line_State;
+
 // 函数声明
 void fm_demodulate_fx(short* I, short* Q, int length, short* freq_fx, int sample_rate);
 void freq_to_yuv_fx(short* freq_fx, int length, short* Y_fx);

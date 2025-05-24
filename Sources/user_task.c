@@ -39,14 +39,12 @@ int main() {
 
     short search_start = 0; // 搜索起始位置
     short search_length = 1; // 搜索1秒数据
-    vis_result vis_sync_result = {-1, -1, -1, -1}; // 初始化结果结构
-    vis_result line_sync_result = {-1, -1, -1, -1}; // 初始化结果结构
-    parity_result parity_result = {0, 0, -1, 0}; // 初始化结果结构
+    
     int line = 0;   //行定位
 
     while(true){
         // 搜索前1s的VIS同步头
-        vis_sync_result = detect_vis_sync_use(file_i, file_q, search_start, search_length);
+        vis_result vis_sync_result = detect_vis_sync_use(file_i, file_q, search_start, search_length);
         if (vis_sync_result.found) {
             printf("\nSync position (1200Hz location) can be used as reference: %d\n", vis_sync_result.sync_position);
             position = vis_sync_result.sync_position; // 更新数据指针位置
@@ -58,7 +56,7 @@ int main() {
 
     while (true)
     {
-        line_sync_result = detect_line_sync_use(file_i, file_q, position, search_length * SAMPLE_RATE);
+        vis_result line_sync_result = detect_line_sync_use(file_i, file_q, position, search_length * SAMPLE_RATE); // 初始化结果结构
         if (line_sync_result.found) {
             printf("\nSync position (1500Hz location) can be used as reference: %d\n", line_sync_result.sync_position);
             position = line_sync_result.sync_position; // 更新数据指针位置
@@ -66,7 +64,7 @@ int main() {
             // 处理该行Y值
             process_line_y_fx(file_i, file_q, position, fx_y_lines[line]);
             position += Y_NUM; // 更新数据指针位置
-            parity_result = detect_line_parity_use(file_i, file_q, position, 0.0045 * SAMPLE_RATE);
+            parity_result parity_result = detect_line_parity_use(file_i, file_q, position, 0.01 * SAMPLE_RATE);
             if(parity_result.found) {
                 printf("\nParity detection result: %s\n", parity_result.is_odd ? "ODD" : "EVEN");
                 position = parity_result.sync_position; // 更新数据指针位置

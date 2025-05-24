@@ -15,14 +15,7 @@
 #define STEP_1MS 48             // 1ms步长
 #define JUMP_250MS 12000        // 250ms跳跃(样本数)
 
-// 状态机状态
-typedef enum {
-    VIS_STATE_IDLE,                // 初始状态，搜索第一个1900Hz
-    VIS_STATE_FOUND_1900_FIRST,    // 找到第一个1900Hz，准备跳跃
-    VIS_STATE_SEARCHING_1200,      // 搜索1200Hz信号
-    VIS_STATE_FOUND_1200,          // 找到1200Hz，搜索第二个1900Hz
-    VIS_STATE_COMPLETE             // 完整检测到序列
-} VIS_State;
+
 
 
 
